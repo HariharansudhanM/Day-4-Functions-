@@ -43,7 +43,6 @@ let primeNumber = (number) => {
 
   // check if number is greater than 1
   else if (number > 1) {
-    // looping through 2 to number-1
     for (let i = 2; i < number; i++) {
       if (i % 2 == 0) {
       } else {
@@ -56,3 +55,33 @@ let primeNumber = (number) => {
 };
 
 primeNumber(21);
+
+//Return all the palindromes in an array
+let palindrome = (array) => {
+  array.forEach((element) => {
+    for (let i = 0; i < element.length / 2; i++) {
+      // validate the first and last characters are same
+      if (element[i] !== element[element.length - 1 - i]) {
+        console.log("Its not a palindrome");
+      } else {
+        console.log("its is a palindrome " + element);
+      }
+    }
+  });
+};
+
+palindrome(["hari", "madam"]);
+
+//Remove duplicates from an array
+let duplicates = (input) => {
+  let unique = [];
+  input.forEach((element) => {
+    if (!unique.includes(element)) {
+      unique.push(element);
+    }
+    return unique;
+  });
+  console.log(unique);
+};
+
+duplicates(["hari", "tharaney", "arun", "hari", "ranjani", "yaswanth", "arun"]);
